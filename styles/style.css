@@ -52,9 +52,10 @@ ol {
 .content__list {
   height: 298px;
   overflow-y: auto;
-  width: 420px;
+  width: 416px;
   position: relative;
   margin-top: 23px;
+  padding-top: 2px;
 }
 
 .content__list-item {
@@ -62,7 +63,7 @@ ol {
 }
 
 .content__list-item:not(:last-child) {
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 
@@ -124,6 +125,7 @@ ol {
   align-items: start;
   justify-content: space-between;
   width: 399px;
+  height: 107px;
 }
 
 .content__video-card:active {
@@ -132,15 +134,23 @@ ol {
 
 .content__video-card:hover {
   text-decoration: underline;
+  text-decoration-color: white;
 }
 
-.content__video-card:focus {
+.content__card-link:focus {
   outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid white;
 }
 
 .content__video-card:has(:focus-visible) {
-  border: 1px solid white;
-  outline: none;
+  outline: 1px solid white;
+}
+
+.content__video-card-description-container {
+  margin-left: 2px;
 }
 
 .content__video-card-title {
@@ -152,15 +162,19 @@ ol {
   white-space: nowrap;
   overflow: hidden;
   max-width: 192px;
+  height: 36px;
+  margin-left: 2px;
 }
 
 .content__video-card-description {
   color: white;
+  font-size: 18px;
 }
 
+
 .content__video-card-thumbnail {
-  width: 175px;
-  height: 103px;
+  width: 197px;
+  height: 100%;
   font-size: 18px;
   object-fit: cover;
   object-position: center;
@@ -180,16 +194,14 @@ ol {
   text-decoration: underline;
 }
 
-
+.button:active {
+  background-color: #545050;
+}
 
 .search-form__submit-button {
   margin-top: 18px;
   width: 194px;
   height: 34px;
-}
-
-.search-form__submit-button:active {
-  background-color: #545050;
 }
 
 .search-form__submit-button:focus {
@@ -226,6 +238,10 @@ ol {
   font-size: 18px;
   font-family: inherit;
   color: white;
+}
+
+.search-form__label:hover {
+  text-decoration: none;
 }
 
 .search-form__textfield:focus {
@@ -302,5 +318,5 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
 .content__card-link {
   display: inline-block;
   text-decoration: none;
-  width: 320px;
+  width: 394px;
 }
