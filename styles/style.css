@@ -10,12 +10,14 @@ html {
 
 .page {
   inline-size: 1200px;
-  block-size: 100%;
+  block-size: 100%;  /*В ревью стиль указан, как лишний, но стили для селектора '.page' были даны в изначальном файле, потому боюсь что-то менять */
   margin: auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: grid;
+  place-content: center;
 }
 
 h1,
@@ -38,7 +40,6 @@ ol {
 }
 
 .content {
-  margin: 133px 30px 133px 30px;
   display: grid;
   grid-template-columns: 711px 399px;
   column-gap: 30px;
@@ -48,27 +49,31 @@ ol {
   position: relative;
 }
 
-.content__details {
-  height: 100vh;
-  width: 100vh;
-}
-
 .content__list {
   height: 298px;
   overflow-y: auto;
-  overflow-x: hidden;
-  width: 394px;
+  width: 420px;
   position: relative;
   margin-top: 23px;
 }
 
-.content__list-item:not(:last-child) {
-  margin-bottom: 32px;
+.content__list-item {
+  width: 399px;
 }
 
+.content__list-item:not(:last-child) {
+  margin-bottom: 36px;
+}
+
+
+
 .result__video {
+  object-fit: cover;
+  object-position: center;
+  max-height: 386px;
   width: 100%;
   margin-top: 78px;
+  margin-bottom: 13px;
 }
 
 .search-form {
@@ -76,10 +81,13 @@ ol {
   grid-template-columns: 225px 212px 194px;
   column-gap: 40px;
   height: 49px;
+  font-family: 'Fira Sans Condensed', sans-serif;
 }
 
 .search-form__label {
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .search-form__label:hover {
@@ -95,10 +103,14 @@ ol {
   outline: none;
 }
 
+.search-form__label-text {
+  margin-left: 5px;
+}
+
 .title {
   font-size: 75px;
   font-weight: 700;
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   line-height: 70.5px;
 }
@@ -111,6 +123,7 @@ ol {
   display: flex;
   align-items: start;
   justify-content: space-between;
+  width: 399px;
 }
 
 .content__video-card:active {
@@ -121,16 +134,24 @@ ol {
   text-decoration: underline;
 }
 
+.content__video-card:focus {
+  outline: none;
+}
+
 .content__video-card:has(:focus-visible) {
   border: 1px solid white;
   outline: none;
 }
 
 .content__video-card-title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   color: white;
   font-size: 30px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 192px;
 }
 
 .content__video-card-description {
@@ -141,6 +162,8 @@ ol {
   width: 175px;
   height: 103px;
   font-size: 18px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .button {
@@ -148,22 +171,16 @@ ol {
   border: 1px solid white;
   color: white;
   font-size: 18px;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", sans-serif;
   cursor: pointer;
-}
-
-.button:focus {
-  outline: none;
+  font-weight: 700;
 }
 
 .button:hover {
   text-decoration: underline;
 }
 
-.button:has(:focus-visible) {
-  border: 1px solid white;
-  outline: none;
-}
+
 
 .search-form__submit-button {
   margin-top: 15px;
@@ -175,14 +192,26 @@ ol {
   background-color: #545050;
 }
 
+.search-form__submit-button:focus {
+  outline: none;
+}
+
+.search-form__submit-button:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 1px;
+}
+
 .search-form__fieldset {
   border: none;
-  display: flex;
+  display: grid;
+  grid-template-rows: 22px 27px;
   flex-direction: column;
+  font-family: inherit;
+  font-size: 18px;
 }
 
 .search-form__fieldset-title {
-  font-family: "Fira Sans Condensed";
+  font-family: inherit;
   font-size: 18px;
   font-weight: 400;
 }
@@ -195,7 +224,16 @@ ol {
   border-bottom: 1px solid white;
   border-top: 1px solid white;
   font-size: 18px;
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: inherit;
+  color: white;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:has(:focus-visible) {
+  outline: 1px solid white;
 }
 
 .search-form__textfield:active {
@@ -228,7 +266,17 @@ ol {
 }
 
 .more-button {
-  width: 100%;
+  width: 399px;
+  height: 34px;
+}
+
+.more-button:focus {
+  outline: none;
+}
+
+.more-button:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 1px;
 }
 
 .search-form__pseudo-checkbox::before {
@@ -245,4 +293,14 @@ ol {
 
 input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
   opacity: 1;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link {
+  display: inline-block;
+  text-decoration: none;
+  width: 320px;
 }
