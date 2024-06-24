@@ -89,7 +89,7 @@ ol {
   align-items: center;
 }
 
-.search-form__label:hover {
+.search-form__checkbox-list .search-form__label:hover {
   text-decoration: underline;
 }
 
@@ -237,9 +237,6 @@ ol {
   color: white;
 }
 
-.search-form__label:hover {
-  text-decoration: none;
-}
 
 .search-form__textfield:focus {
   outline: none;
@@ -315,5 +312,5 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
 .content__card-link {
   display: inline-block;
   text-decoration: none;
-  width: 400px;
+  width: 399px;
 }
