@@ -10,7 +10,7 @@ html {
 
 .page {
   inline-size: 1200px;
-  block-size: 100%;  /*В ревью стиль указан, как лишний, но стили для селектора '.page' были даны в изначальном файле, потому боюсь что-то менять */
+  block-size: 100%; /*В ревью стиль указан, как лишний, но стили для селектора '.page' были даны в изначальном файле, потому боюсь что-то менять */
   margin: auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -47,6 +47,7 @@ ol {
 
 .result__video-container {
   position: relative;
+  margin-top: 78px;
 }
 
 .content__list {
@@ -66,14 +67,11 @@ ol {
   margin-bottom: 32px;
 }
 
-
-
 .result__video {
   object-fit: cover;
   object-position: center;
   max-height: 386px;
   width: 100%;
-  margin-top: 78px;
   margin-bottom: 13px;
 }
 
@@ -82,7 +80,7 @@ ol {
   grid-template-columns: 225px 212px 194px;
   column-gap: 40px;
   height: 49px;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
 }
 
 .search-form__label {
@@ -170,7 +168,6 @@ ol {
   color: white;
   font-size: 18px;
 }
-
 
 .content__video-card-thumbnail {
   width: 197px;
@@ -318,5 +315,5 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
 .content__card-link {
   display: inline-block;
   text-decoration: none;
-  width: 394px;
+  width: 400px;
 }
